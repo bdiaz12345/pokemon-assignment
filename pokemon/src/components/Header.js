@@ -9,10 +9,10 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 90%;
+    bottom: 92%;
 
     @media (max-width: 480px) {
-        bottom: 91%;
+        bottom: 90%;
     }
 `
 
