@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 92%;
+    bottom: 91%;
 
     @media (max-width: 480px) {
         bottom: 90%;
@@ -36,7 +36,7 @@ const Header = () => {
             <SubWrapper>
                 <Link to='/favorites' style={{color: 'white'}}>Favorites</Link>
                 <Title>Pokemon</Title>
-                <Link to='/' style={{color: 'white'}}>Pokedex</Link>
+                <Link to='/pokedex' style={{color: 'white'}}>Pokedex</Link>
             </SubWrapper>
         </Wrapper>
     )

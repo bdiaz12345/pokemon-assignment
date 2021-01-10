@@ -53,6 +53,7 @@ axios
 
 const Cards = () => {
     let [pokemon, setPokemon] = useState(data)
+    favorites = JSON.parse(localStorage.getItem('favorites'))
 
     return (
         <Wrapper>
@@ -64,6 +65,8 @@ const Cards = () => {
                             <Add onClick={() => {
                                 favorites.includes(piece.imageUrl) ? console.log(piece.imageUrl) : favorites.push(piece.imageUrl)
                                 alert('added!')
+                                localStorage.setItem('favorites', JSON.stringify(favorites))
+                                console.log(localStorage)
                             }
                         }>Add to Favorites</Add>
                         </Card>

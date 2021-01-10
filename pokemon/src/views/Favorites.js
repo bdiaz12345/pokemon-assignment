@@ -6,15 +6,11 @@ import Header from '../components/Header'
 const Wrapper = styled.div``
 
 const FavoritesWrapper = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-flow: wrap;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 8rem;
-
-    @media (max-width: 480px) {
-        grid-template-columns: auto;
-    }
 `
 
 const Card = styled.div`
@@ -44,8 +40,10 @@ const Confirmation = styled.p`
 `
 
 const Favorites = () => {
-    const [updatedFavorites, setUpdatedFavorites] = useState(favorites)
+    const [updatedFavorites, setUpdatedFavorites] = useState(JSON.parse(localStorage.getItem('favorites')))
     const [selectedIndex, setSelectedIndex] = useState([])
+
+    
 
     return (
         <Wrapper>
@@ -60,6 +58,7 @@ const Favorites = () => {
                                 if (selectedIndex === index) {
                                     favorites.splice(selectedIndex, 1)
                                 }
+                                localStorage.setItem('favorites', JSON.stringify(favorites))
                                 setUpdatedFavorites([...favorites])
                             }}>Remove from Favorites</Remove>
                             <Confirmation>Double-click to confirm removal</Confirmation>
