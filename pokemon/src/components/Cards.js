@@ -63,8 +63,7 @@ const Cards = () => {
                         <Card>
                             <Image src={piece.imageUrl} />
                             <Add onClick={() => {
-                                favorites.includes(piece.imageUrl) ? console.log(piece.imageUrl) : favorites.push(piece.imageUrl)
-                                alert('added!')
+                                favorites.includes(piece.imageUrl) ? alert('already added to favorites!') : favorites.push(piece.imageUrl)
                                 localStorage.setItem('favorites', JSON.stringify(favorites))
                                 console.log(localStorage)
                             }
